@@ -7,60 +7,49 @@ import org.junit.Test;
 
 public class FindMaximumTest {
 
-	FindMaximum findMaximum = new FindMaximum();
-
 	@Test
 	public void givenMaximumValueAtFirst_ShouldReturnFirstIntegerMax() {
-		Integer MaximumNumber = findMaximum.findMax(10, 7, 5);
-		Assert.assertSame(10, MaximumNumber);
+		Assert.assertSame(10, new FindMaximum(10, 7, 5).findMax());
 	}
 
 	@Test
 	public void givenMaximumValueAtSecondPosition_ShouldReturnSecondIntegerMax() {
-		Integer MaximumNumber = findMaximum.findMax(10, 15, 1);
-		Assert.assertSame(15, MaximumNumber);
+		Assert.assertSame(10, new FindMaximum(1, 10, 5).findMax());
 	}
 
 	@Test
 	public void givenMaximumValueAtThirdPosition_ShouldReturnThirdIntegerMax() {
-		Integer MaximumNumber = findMaximum.findMax(10, 20, 55);
-		Assert.assertSame(55, MaximumNumber);
+		Assert.assertSame(10, new FindMaximum(1, 4, 10).findMax());
 	}
 
 	@Test
 	public void givenMaximumValueAtFirstPosition_ShouldReturnFirstFloatMax() {
-		Float MaximumNumber = FindMaximum.findMax(15.1f, 2.5f, 5.0f);
-		Assert.assertEquals(15.1f, MaximumNumber, 0.001);
+		Assert.assertEquals(10.4f, new FindMaximum(10.4f, 7.2f, 5.5f).findMax());
 	}
 
 	@Test
 	public void givenMaximumValueAtSecondPosition_ShouldReturnSecondFloatMax() {
-		Float MaximumNumber = FindMaximum.findMax(15.1f, 20.5f, 5.0f);
-		Assert.assertEquals(20.5f, MaximumNumber, 0.001);
+		Assert.assertEquals(10.4f, new FindMaximum(7.2f, 10.4f, 5.5f).findMax());
 	}
 
 	@Test
 	public void givenMaximumValueAtThirdPosition_ShouldReturnThirdFloatMax() {
-		Float MaximumNumber = FindMaximum.findMax(15.1f, 2.5f, 25.2f);
-		Assert.assertEquals(25.2f, MaximumNumber, 0.001);
+		Assert.assertEquals(10.4f, new FindMaximum(7.2f, 5.5f, 10.4f).findMax());
 	}
 
 	@Test
 	public void givenMaximumValueAtFirstPosition_ShouldReturnFirstStringMax() {
-		String MaximumString = FindMaximum.findMax("Peach", "Apple", "Banana");
-		Assert.assertEquals("Peach", MaximumString);
+		Assert.assertEquals("Peach", new FindMaximum("Peach", "Apple", "Banana").findMax());
 	}
 
 	@Test
 	public void givenMaximumValueAtFirstPosition_ShouldReturnSecondStringMax() {
-		String MaximumString = FindMaximum.findMax("Apple", "Peach", "Banana");
-		Assert.assertEquals("Peach", MaximumString);
+		Assert.assertEquals("Peach", new FindMaximum("Apple", "Peach", "Banana").findMax());
 	}
 
 	@Test
 	public void givenMaximumValueAtFirstPosition_ShouldReturnThirdStringMax() {
-		String MaximumString = FindMaximum.findMax("Apple", "Banana", "Peach");
-		Assert.assertEquals("Peach", MaximumString);
+		Assert.assertEquals("Peach", new FindMaximum("Apple", "Banana", "Peach").findMax());
 	}
 
 }
